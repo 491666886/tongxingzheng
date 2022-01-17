@@ -1,0 +1,33 @@
+/* 本文将定义一些scss方法或者变量 */
+/* 等比缩放 */
+@function w($value) {
+	@if $value==0 {
+		@return 0;
+	}
+	@return ($value/1920) * 100vw;
+}
+@function h($value) {
+	@if $value==0 {
+		@return 0;
+	}
+	@return ($value / 1080) * 100vh;
+}
+
+$text-color: #222;
+$nav-header-height: h(80);
+$menu-width: w(240);
+$blue: #65A6FD;
+$green: #81E483;
+$gray: #667598;
+$red: #FF5555;
+$warning: #FFCECE;
+$warning-color: #F64949;
+$avatar-bg: #EAF3FF;
+$borderColor: #D4D3D3;
+$table-header-btn-bg-color-primary: #FFF1DD;
+$table-header-btn-bg-color-default: #F6F6F6;
+$dialog-cancel-btn-bg-color: #ECEEF1;
+$message-box-text-color: #4D555D;
+
+$--input-height: 36px;
+

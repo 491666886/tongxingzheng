@@ -1,0 +1,13 @@
+/* 本文件覆盖饿了么UI整体风格样式以及scss变量 */
+@import "./main";
+$--color-primary: #FF911D;
+$--border-color-base: $borderColor;
+$--border-color-lighter: $borderColor;
+$--table-header-background-color: #F6F6F6;
+$--table-header-font-color: $text-color;
+$--border-color-hover: $--color-primary;
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";

@@ -1,0 +1,19 @@
+# dependencies  npm包文件
+/node_modules
+
+# production  打包文件
+/build
+/distyd
+distyd.zip
+distb.zip
+/distb
+dista.zip
+/dista
+
+.DS_Store
+
+npm-debug.log*
+
+.idea
+
+/src/assets/iconfont/demo_index.html

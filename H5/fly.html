@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+    <script src="http://vjs.zencdn.net/c/video.js"></script>
+</head>
+
+<body>
+  <!-- <div id="player"></div> -->
+  <video autoplay src="http://172.38.50.91:8001/groudbaby/resource/video/v1/play/hlz/FC11D0BFCCAC43039AC68E893E7178EB.mp4?authorization=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJodWx1emFpIiwiaWF0IjoxNjMwMDI2MDI2LCJ0ZWwiOiIxNTg4ODg4ODg4OSJ9.-Jwlt04wiFUentuRdiKqwsKWtQNJdrwM5W0isEMFCQg" ></video>
+</body>
+<script src="http://cdn.jsdelivr.net/npm/xgplayer/browser/index.js" charset="utf-8"></script>
+<script src="http://cdn.jsdelivr.net/npm/xgplayer-flv.js/browser/index.js" charset="utf-8"></script>
+<script type="text/javascript">
+    new window.FlvJsPlayer({
+        id: 'player',
+        isLive: false,
+        playsinline: true,
+        // url: 'http://172.38.50.126:8188/proxy/12011200001320168161.flv?authorization=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJodWx1emFpIiwiaWF0IjoxNjIwMjcxMDIyLCJ0ZWwiOiIxMzMwMDAwMDAwMCIsInJlZ2lvbklkIjoxfQ.czHFkYvHHEzXAVnZmn8LatBdgkBYt6qmkppPURL3BO8',
+        // url:'https://sf1-hscdn-tos.pstatp.com/obj/media-fe/xgplayer_doc_video/flv/xgplayer-demo-360p.flv',
+        // url:'http://172.38.50.126:8001/groudbaby/resource/v1/api/live/flv/12011200001318333001.flv?authorization=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJodWx1emFpIiwiaWF0IjoxNjE5MTU4ODQ2LCJ0ZWwiOiIwMDAwMDAwMDAwMCIsInJlZ2lvbklkIjowfQ.lgDnunULhKpen7O-Hp47uMZyTHbhQ4tGnWUKAq-JEGY',
+        url:'http://172.38.50.126:8188/groudbaby/resource/v1/api/live/flv/12011200001318333001.flv?authorization=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJodWx1emFpIiwiaWF0IjoxNjE5MTU4ODQ2LCJ0ZWwiOiIwMDAwMDAwMDAwMCIsInJlZ2lvbklkIjowfQ.lgDnunULhKpen7O-Hp47uMZyTHbhQ4tGnWUKAq-JEGY',
+        autoplay: true,
+        height: window.innerHeight,
+        width: window.innerWidth
+    });
+</script>
+
+
+
+<style>
+  video::-webkit-media-controls-fullscreen-button {
+    display: none;
+  }
+
+  .video-js .vjs-tech {
+    position: relative !important;
+  }
+
+  .video-js .vjs-time-control {
+    display: block;
+  }
+
+  .video-js .vjs-remaining-time {
+    display: none;
+  }
+</style>
+<script>
+
+
+  function myFunction() {
+    var x = document.getElementById("myVideo");
+
+
+  }
+</script>
+
+</html>

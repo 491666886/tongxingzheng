@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+  <title>葫噜噜</title>
+  <link rel="stylesheet" type="text/css" href="./static/css/invite2.0.css" />
+  <link rel="stylesheet" type="text/css" href="./static/css/common.css" />
+  <link rel="stylesheet" href="./static/element/index.css">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"> -->
+  <script src="./static/element/vue.js"></script>
+  <script src="./static/element/index.js"></script>
+  <script src="static/js/axios.min.js"></script>
+  <script src="static/js/base.js"></script>
+
+
+</head>
+
+<body>
+  <div id="app">
+
+    <div v-if="page === 'B'" class="page flex-col">
+<!--    <div v-if="page = 'B'" class="page flex-col">-->
+      <div class="section1">
+            <div class="page-b">
+                <img class="false" src="./static/picture/invite/success.png" alt="">
+                <span class="paragraph2">
+                您已成功加入亲友藤！
+                <br />
+                快下载葫噜噜APP，<br>共享宝宝精彩时刻吧～
+              </span>
+              <el-button @click="toParentsApp()" class="warning"></el-button>
+<!--              <el-button  class="warning" type="warning"></el-button>-->
+            </div>
+          </div>
+        </div>
+    <div v-if="page === 'C'" class="page flex-col">
+<!--    <div v-if="page = 'C'" class="page flex-col">-->
+      <div class="section1">
+            <div class="page-b">
+              <img class="false" src="./static/picture/invite/false.png" alt="">
+              <span class="paragraph2">
+                哎呀，您来晚啦～
+                <br />
+                请联系孩子的家长 <br>加入亲友藤吧！
+              </span>
+              <el-button @click="toParentsApp()" class="warning" ></el-button>
+            </div>
+      </div>
+    </div>
+    <div v-if="page === 'A'" class="page flex-col main">
+<!--    <div v-if="page = 'A'" class="page flex-col main">-->
+      <div class="section1 flex-col">
+        <div class="box1 flex-col">
+          <div class="section2 flex-col">
+                  <span class="word1">{{childName}}的{{relationName}} <br>邀请您加入亲友藤</span>
+                  <span class="paragraph1">
+                    <br />
+                    可观看{{childName}}的在园高光时刻、精彩瞬间
+                  </span>
+          </div>
+          <div class="section3 flex-col" :style="{backgroundImage:'url('+bannerimg+')'}"></div>
+        </div>
+        <div class="box2 flex-col">
+          <div class="section4 flex-col">
+            <el-form :model="ruleForm" :rules="rules" ref="ruleForm" class="from">
+              <el-form-item label="请选择您的身份" prop="type">
+
+                <el-select v-model="ruleForm.type" placeholder="请选择您的身份">
+                  <el-option v-for="option in type_options" :key="option.id" :value="option.id"
+                    :label="option.rName" />
+                </el-select>
+              </el-form-item>
+              <el-form-item label="请填写手机号" prop="phone">
+                <el-input placeholder="请输入11位手机号码" v-model="ruleForm.phone"></el-input>
+              </el-form-item>
+              <el-form-item label="请填写验证码" prop="verificationCode">
+                <el-input placeholder="请输入验证码" v-model="ruleForm.verificationCode" class="code"></el-input>
+                <el-button class="send" :disabled="isDisabled" :class="isDisabled?'lightBrown opacity':'deepBrown'"
+                  @click="sendcode('ruleForm')" :style="{color:btnColor}">
+                  {{buttonName}}</el-button>
+              </el-form-item>
+              <el-form-item class="main8">
+                <el-button class="confrimBtn" @click="submitForm('ruleForm')"></el-button>
+              </el-form-item>
+            </el-form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </div>
+</body>
+<style>
+  .paragraph2 {
+    z-index: 9;
+    display: block;
+    overflow-wrap: break-word;
+    color: #5B5B5B;
+    font-size: 4.26vw;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    line-height: 3.69vh;
+    text-align: center;
+    align-self: center;
+    margin-top: 7.6vw;
+    letter-spacing: 1px;
+  }
+
+  .page-b {
+    background: url("./static/picture/invite/falseBg.png") no-repeat;
+    background-size: 100%;
+    /*margin-top:20px;*/
+    width:100vw;
+    height:159vw;
+    text-align: center;
+    padding-top:7.75vh;
+  }
+  .page-b .false{
+    width:268px;
+    /*height:177px;*/
+  }
+
+  .main8 {
+    margin-top: 7vw;
+  }
+
+  .el-form-item {
+    margin-bottom: 11px;
+
+  }
+  .el-form-item__content{
+    text-align:center;
+  }
+  .el-button--warning {
+    /*background-color: #FEC047;*/
+    border:none;
+    width: 212px;
+    /*font-size: 16px;*/
+    height:90px;
+  }
+    .confrimBtn{
+        background: none;
+        background-image: url("./static/picture/invite/confirm.png") !important;
+        background-size: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        border:none;
+        width: 212px;
+        /*font-size: 16px;*/
+        height:90px;
+    }
+  .warning {
+    /*width: 40% !important;*/
+      background: none;
+      background-image:url("./static/picture/invite/download.png") !important;
+      background-size:100% 100% !important;
+      background-position: center center;
+      background-repeat: no-repeat;
+      margin-top: 4.9vh;
+      border:none;
+      width: 212px;
+      /*font-size: 16px;*/
+      height:85px;
+  }
+
+  .el-select {
+    display: block;
+  }
+
+  .el-input {
+    width: 100%;
+  }
+
+  /* .from{
+    margin-top: 2.3rem;
+  } */
+  .send {
+    /*color: #FFAF02 !important;*/
+    font-size: 14px;
+    margin-left: 3%;
+    width: 27.67vw;
+    border:none;
+    background:none;
+  }
+
+  .code {
+    width: 57%;
+    float: left;
+  }
+
+  .el-form-item__content {
+    clear: both;
+  }
+</style>
+
+
+<script src="./static/js/invite.js"></script>
+
+</html>

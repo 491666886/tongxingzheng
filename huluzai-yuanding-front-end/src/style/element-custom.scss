@@ -1,0 +1,11 @@
+@import "./element-variables";
+.el-form-item__content {
+  line-height: 36px;
+}
+.el-form-item__label {
+  line-height: 36px;
+}
+.el-table tbody tr:hover>td {
+  background-color: transparent;
+  color: $--color-primary;
+}

@@ -1,0 +1,182 @@
+.mainPage{
+    background:url("../picture/aiObserver/bg.png") no-repeat;
+    background-size:100%;
+    overflow: hidden;
+    padding-top:55px;
+    /*padding-bottom:50px;*/
+}
+/*.navbar .back{*/
+/*    float:left;*/
+/*    width:62px;*/
+/*    height:62px;*/
+/*}*/
+/*.navbar .share{*/
+/*    float:right;*/
+/*    width:96px;*/
+/*    height:56px;*/
+/*}*/
+/*.navbar{*/
+/*    clear: both;*/
+/*}*/
+.titleModule{
+    background:url("../picture/aiObserver/topTitleBg.png") no-repeat;
+    background-size:100% 100%;
+    width:66.67vw;
+    height:45.33vw;
+    margin:0 auto;
+    clear: both;
+    font-size: 12px;
+    color: #FFFFFF;
+    position:relative;
+    top:5px;
+}
+.titleModule span{
+    font-family: OPPOSans-H, OPPOSans;
+    position:absolute;
+    left:14%;
+    top:74%;
+}
+.userInfo{
+    margin-top:30px;
+}
+.userInfo .avatar{
+    width: 80px;
+    height: 80px;
+    border: 3px solid #FFAF02;
+    border-radius:100px;
+    margin:0 auto;
+    overflow: hidden;
+    position:relative;
+    z-index:99;
+    background-color:white;
+}
+.userInfo .avatar img{
+    width:100%;
+    height:100%;
+}
+.userInfo .nameBg{
+    background:url("../picture/aiObserver/circle.png") no-repeat;
+    background-size:100% 100%;
+    width:160px;
+    height:160px;
+    text-align: center;
+    margin:0 auto;
+    padding-top: 30px;
+    box-sizing: border-box;
+    position:relative;
+    top:-30px;
+    z-index:0;
+}
+.userInfo .nameBg .childName{
+    font-size: 24px;
+    font-family: OPPOSans-H, OPPOSans;
+    font-weight: bold;
+    color: #747473;
+    line-height: 40px;
+}
+.userInfo .nameBg .className{
+    font-size: 12px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #747473;
+    line-height: 17px;
+}
+.userInfo .title{
+    background: url("../picture/aiObserver/titileBg.png");
+    background-size:100% 100%;
+    /*width:343px;*/
+    height:16vw;
+    line-height:19vw;
+    /*padding-top:5px;*/
+    box-sizing: border-box;
+    margin:0 16px;
+    font-size: 22px;
+    text-align:center;
+    font-family: OPPOSans-H, OPPOSans;
+    font-weight:bold;
+    color: #FFFFFF;
+    position:relative;
+    top:-110px;
+    z-index:1;
+}
+.userInfo .performance{
+    padding:24px;
+    box-sizing: border-box;
+    margin:0 16px;
+    border-radius:0 0 20px 20px;
+    background:white;
+    position:relative;
+    top:-120px;
+    z-index:0;
+}
+/*.userInfo .performance p{*/
+/*    margin-bottom:0;*/
+/*}*/
+/*.userInfo .performance .per_title{*/
+/*    margin-top:0;*/
+/*    font-weight:bold;*/
+/*    font-family: OPPOSans-H, OPPOSans;*/
+/*}*/
+/*.userInfo .performance .per_content{*/
+/*    font-family: OPPOSans-R, OPPOSans;*/
+/*}*/
+p{
+    margin-bottom:0;
+    color: #61290F;
+    line-height: 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+p.per_title{
+    margin-top:0;
+    font-weight:bold;
+    font-family: OPPOSans-H, OPPOSans;
+}
+p.per_content{
+    font-family: OPPOSans-R, OPPOSans;
+}
+.module{
+    margin-top:40px;
+    text-align: center;
+}
+.module .title{
+    width:66.1vw;
+    height:12vw;
+}
+.module .content{
+    background: #FFFFFF;
+    border-radius: 20px;
+    margin:-7.5% 16px 0 16px;
+    padding:44px 24px 24px 24px;
+}
+.module.grownData .content .radar{
+    width:269px;
+    height:269px;
+    /*background:yellow;*/
+    margin:0 auto;
+}
+.module.grownData{
+    margin-top:-80px;
+}
+.footer{
+    font-size: 12px;
+    font-family: OPPOSans-R, OPPOSans;
+    color: #61290F;
+    line-height: 20px;
+    margin:10px 46px 19px 46px;
+}
+
+
+
+.blackPage{
+    background:url("../picture/aiObserver/blackPageBg.png") no-repeat;
+    background-size:100%;
+    height:100%;
+    text-align: center;
+    padding-top:240px;
+    box-sizing: border-box;
+}
+.blackPage img{
+    width:307px;
+}

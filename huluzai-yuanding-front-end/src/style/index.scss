@@ -1,0 +1,9 @@
+/** 本文件定义浏览器内置元素样式 **/
+@import "./main";
+body {
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	font-family: "PingFangSC-Medium", "PingFang SC", "Microsoft YaHei", sans-serif;
+	color: $text-color;
+}

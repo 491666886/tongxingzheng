@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>葫噜噜</title>
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,minimum-scale=1,maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+  <script src="static/js/vue.min.js"></script>
+  <script src="static/js/axios.min.js"></script>
+  <script src="static/js/echarts.min.js"></script>
+
+<!--  <script type="text/javascript">-->
+<!--    if (document.documentElement.clientWidth >= 750) {-->
+<!--      document.documentElement.style.fontSize = '100px';-->
+<!--    } else {-->
+<!--      document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';-->
+<!--    }//rem布-->
+<!--  </script>-->
+  <link rel="stylesheet" href="static/css/aiObserver.css">
+</head>
+
+<body>
+  <div id="app">
+      <div class="mainPage" v-if="isReportExist">
+          <!--    <div class="navbar">-->
+          <!--      <img class="back" src="./static/picture/aiObserver/back.png" alt="">-->
+          <!--      <img class="share" src="./static/picture/aiObserver/share.png" alt="">-->
+          <!--    </div>-->
+          <div class="titleModule"><span>{{statCycle}}</span></div>
+<!--          <div class="titleModule"><span>2021.03.26~2021.08.26</span></div>-->
+          <div class="userInfo">
+              <div class="avatar"><img :src="avatar" alt=""></div>
+              <div class="nameBg">
+                  <div class="childName">{{childName}}</div>
+                  <div class="className">{{className}}</div>
+              </div>
+              <div class="title">{{description}}</div>
+              <div class="performance">
+                  <p class="per_title">{{childName}}小朋友本周期内表现如下:</p>
+                  <p class="per_content" v-for="(item,index) in performanceLists">{{item}}</p>
+<!--                  <p class="per_content">配合教师日常教学活动，认真学习知识,有良好的课堂习惯。喜欢探究问题，形象思维发展良好，积累了一定技能。</p>-->
+<!--                  <p class="per_content">配合教师日常教学活动，认真学习知识,有良好的课堂习惯。喜欢探究问题，形象思维发展良好，积累了一定技能。</p>-->
+              </div>
+          </div>
+          <div class="module grownData">
+              <img class="title" src="./static/picture/aiObserver/grownData.png" alt="">
+              <div class="content">
+                  <div id="radar" class="radar"></div>
+              </div>
+          </div>
+          <div class="module tips">
+              <img class="title" src="./static/picture/aiObserver/parentstips.png" alt="">
+              <div class="content">
+                  <p class="per_title">家庭教育与家长陪伴对孩子成长至关重要，葫噜噜给您准备的家庭教育小建议:</p>
+                  <p class="per_content" v-for="(item,index) in tipsList">{{item}}</p>
+                  <!--                  <p class="per_content">1、家长可以对孩子的运动习惯进行鼓励和培养,在日常生活中鼓励孩子多走路、少坐车。独立上下楼梯，自己的书包自己背。 </p>-->
+              </div>
+          </div>
+          <div class="footer">
+              注：本报告由葫噜噜分析整理，结果仅供参考，最终解释权归葫噜噜团队所有
+          </div>
+      </div>
+      <div class="blackPage" v-if="!isReportExist">
+          <img src="./static/picture/aiObserver/blackWords.png" alt="">
+      </div>
+  </div>
+  <script src="static/js/base.js"></script>
+<!--  <script src="static/js/index.js"></script>-->
+</body>
+<style>
+  html,body,#app{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+  }
+</style>
+<script src="static/js/aiObserver.js"></script>
+
+</html>

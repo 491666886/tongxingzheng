@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>葫噜噜</title>
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,minimum-scale=1,maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+  <script src="static/js/vue.min.js"></script>
+  <script src="static/js/axios.min.js"></script>
+  <script src="static/js/jweixin-1.2.0.js"></script>
+  <script src="static/js/shareCard.js"></script>
+  <script type="text/javascript">
+    if (document.documentElement.clientWidth >= 750) {
+      document.documentElement.style.fontSize = '100px';
+    } else {
+      document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+    }//rem布
+  </script>
+  <link rel="stylesheet" href="static/css/index-235436547678990.css">
+</head>
+
+<body>
+  <div id="app">
+    <!-- 头部图片 -->
+    <!-- 文章内容 -->
+    <!-- 文章里的视频 -->
+    <div class="video-content">
+      <video @ended="videoOnended" :src="videourl"  :poster="videoImg" preload="auto" controls
+       >
+      </video>
+      <!-- <video src="http://vjs.zencdn.net/v/oceans.mp4" controls  :poster="content.videoImg" preload="none" onplay="myFunction()" id="myVideo"
+         x5-video-player-type="h5" x5-video-player-fullscreen="true" webkit-playsinline="true" playsinline="true"
+     >
+      </video> -->
+    
+      <!-- <h1>{{content.item.name}}</h2> -->
+      <l class="tit">{{content.videoName}}</l>
+      <!-- <image class="play" src="./static/picture/play.png"></image>
+              <l class="num">123</l>
+              <l class="time">111111111</l> -->
+      <img src="./static/picture/pro.png" class="pro">
+    </div>
+  </div>
+  <script src="static/js/base.js"></script>
+  <script src="static/js/index2.js"></script>
+</body>
+<style>
+   /* video::-webkit-media-controls-fullscreen-button {
+            display: none;
+        } */
+  .video-js .vjs-tech {
+    position: relative !important;
+  }
+
+  .video-js .vjs-time-control {
+    display: block;
+  }
+
+  .video-js .vjs-remaining-time {
+    display: none;
+  }
+</style>
+<script>
+
+
+  function myFunction() {
+    var x = document.getElementById("myVideo");
+
+
+  }
+  </script>
+</html>

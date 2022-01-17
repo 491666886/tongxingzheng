@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+  <title>葫噜噜</title>
+  <link rel="stylesheet" type="text/css" href="./static/css/invite.css" />
+  <link rel="stylesheet" type="text/css" href="./static/css/common.css" />
+  <link rel="stylesheet" href="./static/element/index.css">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"> -->
+  <script src="./static/element/vue.js"></script>
+  <script src="./static/element/index.js"></script>
+  <script src="static/js/axios.min.js"></script>
+  <script src="static/js/base.js"></script>
+
+
+</head>
+
+<body>
+  <div id="app">
+
+    <div v-if="page === 'B'" class="page flex-col">
+      <div class="section1 flex-col">
+        <div class="box1 flex-col">
+          <div class="section2 flex-col">
+            <img class="pic1" referrerpolicy="no-referrer"
+              src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng39f8f505c063c47585566915290e9bef07206170691f35f9efb2ab53948a82b0" />
+            <img class="pic2" referrerpolicy="no-referrer"
+              src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngd30748e2e31b382cc9b7459968bf83d930f29d8e42914f6f0da2f5859aafcc0f" />
+            <div class="page-b"> <img class="image" referrerpolicy="no-referrer"
+                src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngd0ad1a9295caa0801917006d3021f1d320e3a902746377ae0b94981a25127c17" />
+
+
+              <span class="paragraph2">
+                您已成功加入亲友藤！
+                <br />
+                快下载葫噜噜APP共享宝宝精彩时刻吧～
+              </span>
+              <el-button @click="toParentsApp()" class="warning" type="warning">下载葫噜噜</el-button>
+            </div>
+            <!-- <div class="section3 flex-col" :style="{backgroundImage:'url('+bannerimg+')'}"></div> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div v-if="page === 'C'" class="page flex-col">
+      <div class="section1 flex-col">
+        <div class="box1 flex-col">
+          <div class="section2 flex-col">
+            <img class="pic1" referrerpolicy="no-referrer"
+              src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng39f8f505c063c47585566915290e9bef07206170691f35f9efb2ab53948a82b0" />
+            <img class="pic2" referrerpolicy="no-referrer"
+              src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngd30748e2e31b382cc9b7459968bf83d930f29d8e42914f6f0da2f5859aafcc0f" />
+            <div class="page-b"> <img class="image" referrerpolicy="no-referrer"
+                src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngff499b74d4e1b50453126e07d3b4f434fdc334d439df4f06bf7c0269a0597a26" />
+              <span class="paragraph2">
+                哎呀，您来晚啦～
+                <br />
+                请联系孩子的家长加入亲友藤吧！
+              </span>
+              <el-button @click="toParentsApp()" class="warning" type="warning">下载葫噜噜</el-button>
+            </div>
+            <!-- <div class="section3 flex-col" :style="{backgroundImage:'url('+bannerimg+')'}"></div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div v-if="page === 'A'" class="page flex-col">
+      <div class="section1 flex-col">
+        <div class="box1 flex-col">
+          <div class="section2 flex-col">
+            <img class="pic1" referrerpolicy="no-referrer"
+              src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng39f8f505c063c47585566915290e9bef07206170691f35f9efb2ab53948a82b0" />
+            <img class="pic2" referrerpolicy="no-referrer"
+              src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPngd30748e2e31b382cc9b7459968bf83d930f29d8e42914f6f0da2f5859aafcc0f" />
+            <div class="outer1 flex-col">
+              <div class="outer2 flex-col">
+                <div class="outer3 flex-row">
+                  <img class="img1" referrerpolicy="no-referrer"
+                    src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng14ea8584b3d7d577f9cdad29f9f52c1ad1d718d33a4dcf8d949e4439c6eb4702" />
+                  <img class="img2" referrerpolicy="no-referrer"
+                    src="https://lanhu.oss-cn-beijing.aliyuncs.com/SketchPng1f8f51bf4ddf637cc1d34fd79ae497e2118e7489b4f12840c733900068508287" />
+                </div>
+                <div class="outer4">
+                  <span class="word1">{{childName}}的{{relationName}}邀请您加入亲友藤</span>
+                  <span class="paragraph1">
+                    <br />
+                    可观看{{childName}}的在园高光时刻、精彩瞬间
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section3 flex-col" :style="{backgroundImage:'url('+bannerimg+')'}"></div>
+        </div>
+        <div class="box2 flex-col">
+          <div class="section4 flex-col">
+            <el-form :model="ruleForm" :rules="rules" ref="ruleForm" class="from">
+              <el-form-item label="请选择您的身份" prop="type">
+                
+                <el-select v-model="ruleForm.type" placeholder="请选择您的身份">
+                  <el-option v-for="option in type_options" :key="option.id" :value="option.id"
+                    :label="option.rName" />
+                </el-select>
+              </el-form-item>
+              <el-form-item label="请填写手机号" prop="phone">
+                <el-input placeholder="请输入11位手机号码" v-model="ruleForm.phone"></el-input>
+              </el-form-item>
+              <el-form-item label="请填写验证码" prop="verificationCode">
+                <el-input placeholder="请输入验证码" v-model="ruleForm.verificationCode" class="code"></el-input>
+                <el-button class="send" :disabled="isDisabled" :class="isDisabled?'lightBrown opacity':'deepBrown'"
+                  @click="sendcode('ruleForm')">
+                  {{buttonName}}</el-button>
+              </el-form-item>
+              <el-form-item class="main8">
+                <el-button type="warning" @click="submitForm('ruleForm')">确认加入</el-button>
+              </el-form-item>
+            </el-form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+<style>
+  .paragraph2 {
+    z-index: 9;
+
+    display: block;
+    overflow-wrap: break-word;
+    color: rgba(51, 51, 51, 1);
+    font-size: 4.26vw;
+    font-family: PingFangSC-Regular;
+    line-height: 6.94vw;
+    text-align: center;
+    align-self: center;
+    margin-top: 7.6vw;
+  }
+
+  .page-b {
+    text-align: center;
+    padding: 10vh 10px;
+    background-color: white;
+    margin-top: 3.5vh;
+
+  }
+
+  .image {
+    width: 67.07vw;
+    height: 32vw;
+    align-self: flex-start;
+
+  }
+
+  .main8 {
+    margin-top: 5vh;
+  }
+
+  .el-form-item {
+    margin-bottom: 11px;
+
+  }
+
+  .el-button--warning {
+    background-color: #FEC047;
+    width: 100%;
+    font-size: 16px;
+    line-height: 3vh;
+  }
+
+  .warning {
+    width: 40% !important;
+    margin-top: 10vh;
+  }
+
+  .el-select {
+    display: block;
+  }
+
+  .el-input {
+    width: 100%;
+  }
+
+  /* .from{
+    margin-top: 2.3rem;
+  } */
+  .send {
+    color: rgba(101, 166, 253, 1);
+    font-size: 3.3vw;
+    margin-left: 3%;
+    width: 27.67vw;
+
+  }
+
+  .code {
+    width: 54%;
+    float: left;
+  }
+
+  .el-form-item__content {
+    clear: both;
+  }
+</style>
+
+
+<script src="./static/js/invite.js"></script>
+
+</html>

@@ -1,0 +1,274 @@
+html,body{
+  height: 100%;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+html{
+  background:#FFFBF6;
+}
+.tit{
+  width: 80%;
+  float: left;
+  font-size: 0.38rem;
+  color:  #222222;
+  margin-left: 0.2rem;
+}
+.play {
+  float: left;
+  width: 0.3rem;
+  height: 0.3rem;
+  margin-top: 0.1rem;
+  margin-left: 2.5rem;
+}
+.num{
+  float: left;
+  font-size: 0.2rem;
+  line-height: 0.5rem;
+  color:  #666666;
+  margin-left: 0.1rem;
+}
+.video-js .vjs-tech {position: relative !important;}
+.video-js .vjs-time-control{display:block;}
+.video-js .vjs-remaining-time{display: none;}
+.time{
+  float: right;
+  line-height: 0.5rem;
+  margin-right: 0.18rem;
+  font-size: 0.2rem;
+  color:  #666666;
+}
+.pro{
+  width: 100%;
+  margin-top: 0.6rem;
+}
+.clearfix:after,
+.clearfix:before{
+    content: '';
+    display: block;
+    clear: both;
+}
+#app{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  /* max-width: 7.5rem; */
+  /* margin: 0 auto; */
+}
+.loading{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content:center;
+  flex-direction:column;
+  align-items:center;
+}
+.loading img{
+  width: 2.5rem;
+}
+
+#app .main{
+  padding: 0 0.29rem;
+
+}
+#app .main .top-img,
+#app .main .bottom-img{
+  margin-left: -0.29rem;
+}
+
+
+
+.shipin {
+  width: 100%;
+}
+
+.shipin video {
+  width: 100%;
+}
+
+
+
+
+.temp-comments .top{
+width: 100%;
+height: 0.7rem;
+line-height: 0.7rem;
+font-size: 0.26rem;
+color: #fff;
+background-color: #ccc;
+text-align: center;
+}
+
+.temp-comments .commments{
+padding: 0.3rem;
+}
+.temp-comments .commments .left{
+float:left;
+width: 0.97rem;
+}
+.temp-comments .commments .left img{
+display:block;
+width:0.76rem;
+border-radius: 50%;
+}
+.temp-comments .commments .right{
+float:left;
+width:5.64rem;
+}
+.temp-comments .commments .right .name{
+height: 0.45rem;
+line-height: 0.45rem;
+font-size:0.28rem;
+color:#2d7f97;
+}
+.temp-comments .commments .right .comment-item-content{
+line-height: 0.5rem;
+font-size:0.3rem;
+color:#363636;
+padding-top: 0.08rem;
+}
+.temp-comments .commments .right .date{
+height: 0.63rem;
+line-height: 0.63rem;
+font-size:0.23rem;
+color:#ccc;
+}
+
+
+
+.top-img,.bottom-img{
+display:block;
+}
+
+.video-content{
+background:#FFFBF6;
+padding-bottom:0.89rem;
+}
+.video-content h2{
+font-size:0.3rem;
+line-height:1.05rem;
+height: 1.05rem;
+text-align: center;
+}
+.video-content video{
+width: 100%;
+/* height: 3.8rem; */
+}
+/* #container{
+  width: 7.5rem;
+} */
+.donwload-files a{
+display: block;
+width:100%;
+height: 0.6rem;
+line-height: 0.6rem;
+text-align: center;
+font-size: 0.5rem;
+}
+
+
+
+
+.box-top{
+  padding-bottom: 0.3rem;
+}
+.box-top .title{
+ padding-top: 0.196rem;
+ text-align: center;
+ width: 7.1rem;
+ margin: 0 auto;
+ line-height: 0.8rem;
+}
+.box-top .title p{
+ font-size: 23px;
+ line-height: 0.83rem;
+ display: inline-block;
+ text-align: left;
+}
+.box-top .jieshao{
+ padding: 0.3rem 0.2rem;
+}
+.box-top .jieshao .left{
+ float: left;
+ width: 0.66rem;
+ height: 0.74rem;
+ position: relative;
+}
+.box-top .jieshao .left img{
+ display: block;
+ width: 100%;
+ position: absolute;
+ top:0;
+ bottom: 0;
+ margin: auto;
+ border-radius: 50%;
+}
+.box-top .jieshao .right{
+ width: 6.2rem;
+ float: right;
+ height: 0.74rem;
+}
+.box-top .user-name{
+ padding-top: 0.05rem;
+ line-height: 0.34rem;
+ font-size: 0.21rem;
+}
+.box-top .right-donw{
+
+}
+.box-top .date{
+ float: left;
+ width: 4.02rem;
+ height: 0.34rem;
+ font-size: 0.2rem;
+ color:#b2b2b2;
+ line-height: 0.34rem;
+}
+
+.box-top .dianjilv{
+ width: 1.79rem;
+ float: left;
+ height: 0.34rem;
+ font-size: 0.2rem;
+ color:#b2b2b2;
+ line-height: 0.34rem;
+}
+.box-top .dianjilv img{
+ float: left;
+ display: block;
+ width: 0.17rem;
+ margin-top: 0.05rem;
+ margin-left: 0.06rem;
+}
+  
+  #artcontent{
+    /* width:7.5rem; */
+    margin-left: -0.29rem;
+  }
+  #artcontent .content-html {
+    padding: 0 15px;
+    color:#000;
+    padding-bottom: 0.5rem;
+  }
+  #artcontent .content-html *,
+  #artcontent {
+    font-size: 18px;
+    line-height: 160%;
+  }
+  #artcontent br {
+	display:inline!important; line-height:45px!important;
+	font-size:0!important;
+  }
+  #artcontent .content-html img{
+    width: 100%!important;
+    height: auto!important;
+  }
+  #artcontent table{
+    border-collapse:separate;
+  }
+  #artcontent td{
+    border: 1px solid rgb(170,204,238);
+  }
